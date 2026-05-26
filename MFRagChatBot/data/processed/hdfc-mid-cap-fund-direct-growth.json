@@ -1,0 +1,132 @@
+{
+    "scheme_name": "HDFC Mid Cap Fund Direct Growth",
+    "category": "Equity",
+    "sub_category": "Mid Cap",
+    "riskometer": "Moderately High",
+    "launch_date": "01-Jan-2013",
+    "lock_in": "No lock-in period",
+    "benchmark": "NIFTY Midcap 150 TRI",
+    "benchmark_name": "NIFTY Midcap 150 Total Return Index",
+    "description": "The scheme seeks to provide long-term capital appreciation/income by investing predominantly in Mid-Cap companies.",
+    "nav": 223.135,
+    "nav_date": "26-May-2026",
+    "expense_ratio": "0.73",
+    "aum": 94744.7175,
+    "min_sip": 100,
+    "min_lumpsum": 100,
+    "exit_load": "Exit load of 1% if redeemed within 1 year.",
+    "managers": [
+        {
+            "name": "Chirag Setalvad",
+            "experience": "Prior to joining HDFC AMC he has worked with New Vernon Advisory Services Ltd., HDFC AMC and ING Barings N.V.",
+            "education": "Mr. Setalvad is a B. Sc and MBA from University of North Carolina."
+        },
+        {
+            "name": "Dhruv Muchhal",
+            "experience": "Prior to joining HDFC MF,he has worked with Motilal Oswal Financial Services Ltd., Goldman Sachs, CRISIL Global Research & Analytics and Deloitte Haskins & Sells",
+            "education": "Mr. Dhruv has done B.Com, CA and CFA"
+        }
+    ],
+    "holdings": [
+        {
+            "company_name": "Max Financial Services Ltd.",
+            "sector": "Financial",
+            "percentage": 4.37
+        },
+        {
+            "company_name": "AU Small Finance Bank Ltd.",
+            "sector": "Financial",
+            "percentage": 4.24
+        },
+        {
+            "company_name": "The Federal Bank Ltd.",
+            "sector": "Financial",
+            "percentage": 3.87
+        },
+        {
+            "company_name": "Glenmark Pharmaceuticals Ltd.",
+            "sector": "Healthcare",
+            "percentage": 3.41
+        },
+        {
+            "company_name": "Indian Bank",
+            "sector": "Financial",
+            "percentage": 3.31
+        },
+        {
+            "company_name": "Balkrishna Industries Ltd.",
+            "sector": "Automobile",
+            "percentage": 3.25
+        },
+        {
+            "company_name": "Fortis Healthcare Ltd.",
+            "sector": "Healthcare",
+            "percentage": 3.16
+        },
+        {
+            "company_name": "Vishal Mega Mart Ltd.",
+            "sector": "Services",
+            "percentage": 2.92
+        },
+        {
+            "company_name": "Ipca Laboratories Ltd.",
+            "sector": "Healthcare",
+            "percentage": 2.92
+        },
+        {
+            "company_name": "Cummins India Ltd.",
+            "sector": "Capital Goods",
+            "percentage": 2.5
+        },
+        {
+            "company_name": "Marico Ltd.",
+            "sector": "Consumer Staples",
+            "percentage": 2.48
+        },
+        {
+            "company_name": "Hindustan Petroleum Corporation Ltd.",
+            "sector": "Energy",
+            "percentage": 2.2
+        },
+        {
+            "company_name": "Mahindra & Mahindra Financial Services Ltd.",
+            "sector": "Financial",
+            "percentage": 2.05
+        },
+        {
+            "company_name": "Coforge Ltd.",
+            "sector": "Technology",
+            "percentage": 1.97
+        },
+        {
+            "company_name": "Aurobindo Pharma Ltd.",
+            "sector": "Healthcare",
+            "percentage": 1.96
+        },
+        {
+            "company_name": "Jindal Steel Ltd.",
+            "sector": "Metals & Mining",
+            "percentage": 1.9
+        },
+        {
+            "company_name": "Tata Communications Ltd.",
+            "sector": "Communication",
+            "percentage": 1.86
+        },
+        {
+            "company_name": "Apollo Tyres Ltd.",
+            "sector": "Automobile",
+            "percentage": 1.81
+        },
+        {
+            "company_name": "Alkem Laboratories Ltd.",
+            "sector": "Healthcare",
+            "percentage": 1.8
+        },
+        {
+            "company_name": "Union Bank of India",
+            "sector": "Financial",
+            "percentage": 1.7
+        }
+    ]
+}

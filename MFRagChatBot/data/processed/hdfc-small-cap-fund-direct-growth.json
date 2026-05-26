@@ -1,0 +1,132 @@
+{
+    "scheme_name": "HDFC Small Cap Fund Direct Growth",
+    "category": "Equity",
+    "sub_category": "Small Cap",
+    "riskometer": "Moderately High Riskometer",
+    "launch_date": "01-Jan-2013",
+    "lock_in": "No lock-in period",
+    "benchmark": "BSE 250 SmallCap TRI",
+    "benchmark_name": "BSE 250 SmallCap Total Return Index",
+    "description": "The scheme seeks to provide long-term capital appreciation /income by investing predominantly in Small-Cap companies.",
+    "nav": 153.923,
+    "nav_date": "26-May-2026",
+    "expense_ratio": "0.73",
+    "aum": 38168.1786,
+    "min_sip": 100,
+    "min_lumpsum": 100,
+    "exit_load": "Exit load of 1% if redeemed within 1 year",
+    "managers": [
+        {
+            "name": "Dhruv Muchhal",
+            "experience": "Prior to joining HDFC MF,he has worked with Motilal Oswal Financial Services Ltd., Goldman Sachs, CRISIL Global Research & Analytics and Deloitte Haskins & Sells",
+            "education": "Mr. Dhruv has done B.Com, CA and CFA"
+        },
+        {
+            "name": "Chirag Setalvad",
+            "experience": "Prior to joining HDFC AMC he has worked with New Vernon Advisory Services Ltd., HDFC AMC and ING Barings N.V.",
+            "education": "Mr. Setalvad is a B. Sc and MBA from University of North Carolina."
+        }
+    ],
+    "holdings": [
+        {
+            "company_name": "Aster DM Healthcare Ltd.",
+            "sector": "Healthcare",
+            "percentage": 4.42
+        },
+        {
+            "company_name": "Bank Of Baroda",
+            "sector": "Financial",
+            "percentage": 3.23
+        },
+        {
+            "company_name": "Firstsource Solutions Ltd.",
+            "sector": "Services",
+            "percentage": 3.17
+        },
+        {
+            "company_name": "Gabriel India Ltd.",
+            "sector": "Automobile",
+            "percentage": 2.63
+        },
+        {
+            "company_name": "eClerx Services Ltd.",
+            "sector": "Services",
+            "percentage": 2.35
+        },
+        {
+            "company_name": "Eris Lifesciences Ltd.",
+            "sector": "Healthcare",
+            "percentage": 2.34
+        },
+        {
+            "company_name": "Fortis Healthcare Ltd.",
+            "sector": "Healthcare",
+            "percentage": 2.28
+        },
+        {
+            "company_name": "Indian Bank",
+            "sector": "Financial",
+            "percentage": 2.16
+        },
+        {
+            "company_name": "The Great Eastern Shipping Company Ltd.",
+            "sector": "Energy",
+            "percentage": 2.16
+        },
+        {
+            "company_name": "Krishna Institute of Medical Sciences Ltd",
+            "sector": "Healthcare",
+            "percentage": 1.94
+        },
+        {
+            "company_name": "Apar Industries Ltd.",
+            "sector": "Consumer Staples",
+            "percentage": 1.63
+        },
+        {
+            "company_name": "PVR Inox Ltd.",
+            "sector": "Services",
+            "percentage": 1.59
+        },
+        {
+            "company_name": "Timken India Ltd.",
+            "sector": "Capital Goods",
+            "percentage": 1.57
+        },
+        {
+            "company_name": "The Federal Bank Ltd.",
+            "sector": "Financial",
+            "percentage": 1.56
+        },
+        {
+            "company_name": "Kalpataru Projects International Ltd.",
+            "sector": "Capital Goods",
+            "percentage": 1.52
+        },
+        {
+            "company_name": "Sharda Cropchem Ltd.",
+            "sector": "Chemicals",
+            "percentage": 1.52
+        },
+        {
+            "company_name": "Vardhman Textiles Ltd.",
+            "sector": "Textiles",
+            "percentage": 1.51
+        },
+        {
+            "company_name": "Home First Finance Company India Ltd.",
+            "sector": "Financial",
+            "percentage": 1.49
+        },
+        {
+            "company_name": "Power Mech Projects Ltd.",
+            "sector": "Construction",
+            "percentage": 1.47
+        },
+        {
+            "company_name": "Godrej Consumer Products Ltd.",
+            "sector": "Consumer Staples",
+            "percentage": 1.45
+        }
+    ]
+}
