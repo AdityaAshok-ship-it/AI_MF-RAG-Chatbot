@@ -1,0 +1,48 @@
+name: Daily Mutual Fund Corpus Ingestion
+
+on:
+  schedule:
+    # 10:00 AM IST = 04:30 AM UTC, Monday–Friday
+    - cron: '30 4 * * 1-5'
+  workflow_dispatch: # Allow manual trigger from the GitHub dashboard
+
+jobs:
+  ingest_and_index:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Set up Python 3.10
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+          cache: 'pip'
+
+      - name: Install Dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Run Groww Scraper & Indexer
+        timeout-minutes: 20
+        env:
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+        run: |
+          python scripts/ingest.py
+
+      - name: Verify Index Integrity
+        timeout-minutes: 5
+        run: |
+          python scripts/verify_index.py
+
+      - name: Commit Updated Document Hashes (if changed)
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/document_hashes.json
+          git diff-index --quiet HEAD || git commit -m "chore: auto-update ingestion document hashes [skip ci]"
+          git push
