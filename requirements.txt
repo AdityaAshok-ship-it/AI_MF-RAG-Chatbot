@@ -1,0 +1,13 @@
+# Phase 0 & 1 - Core Ingestion and DB
+python-dotenv
+requests
+beautifulsoup4
+lxml
+
+# Later Phases
+chromadb
+sentence-transformers
+rank_bm25
+groq
+streamlit
+ragas

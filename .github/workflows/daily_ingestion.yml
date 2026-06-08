@@ -11,6 +11,11 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 30
 
+    permissions:
+      contents: write  # needed for git push in the last step
+    env:
+      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true  # opt into Node.js 24 before forced migration on 2026-06-16
+
     steps:
       - name: Checkout Code
         uses: actions/checkout@v4
