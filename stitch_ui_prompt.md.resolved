@@ -1,0 +1,189 @@
+# 🎨 Google Stitch — UI Generation Prompt
+## MFRagChatBot: HDFC Mutual Fund FAQ Assistant
+
+---
+
+## PASTE THIS INTO STITCH ↓
+
+---
+
+Design a **premium, dark-themed financial AI chatbot web application UI** for the **HDFC Mutual Fund FAQ Assistant** — a facts-only RAG (Retrieval-Augmented Generation) chatbot grounded strictly in official Groww scheme pages. The aesthetic must feel like a **fusion of Groww's trusted financial UI and a next-generation AI assistant** — ultra-clean, high-trust, and visually stunning.
+
+---
+
+### 🎨 Visual Design System
+
+**Color Palette:**
+- Primary Background: `#0D0F14` (deep charcoal black)
+- Secondary Surface: `#141720` (card and panel background)
+- Accent Primary: `#00C48C` (Groww signature emerald green — use for CTAs, active states, highlights)
+- Accent Secondary: `#7B61FF` (vibrant violet — for AI response labels and icons)
+- Text Primary: `#F0F2F5` (near-white)
+- Text Secondary: `#8A92A0` (muted gray — for metadata and timestamps)
+- Border/Divider: `#1E2330`
+- Danger/Warning Accent: `#FF6B6B` (for disclaimer banners)
+- Gold Accent: `#FFB74D` (for citation chip highlights)
+
+**Typography:**
+- Font: **Inter** (Google Fonts) — the gold standard for financial apps
+- Headings: Inter Bold 700
+- Body: Inter Regular 400
+- Code/Citation: Inter Mono or `SF Mono`
+
+**Visual Style:**
+- Glassmorphism cards with `backdrop-filter: blur(12px)` and `rgba(255,255,255,0.04)` background
+- Subtle inner glow on active elements using `box-shadow: inset 0 0 0 1px rgba(0,196,140,0.2)`
+- Smooth micro-animations on hover (200ms ease transitions)
+- Rounded corners: `16px` for panels, `12px` for cards, `8px` for chips
+
+---
+
+### 📐 Page Layout — Full Screen, Single Page App
+
+**Layout Structure (Top to Bottom):**
+
+```
+┌─────────────────────────────────────────────────────────────┐
+│                    STICKY TOP HEADER                         │
+├─────────────────────────────────────────────────────────────┤
+│     ⚠️  REGULATORY DISCLAIMER BANNER (always visible)        │
+├─────────────────────────────────────────────────────────────┤
+│                                                             │
+│    LEFT SIDEBAR           │    MAIN CHAT AREA               │
+│    (fund selector panel)  │    (message thread + input)     │
+│                           │                                 │
+└─────────────────────────────────────────────────────────────┘
+```
+
+---
+
+### 🔝 1. TOP NAVIGATION BAR
+- **Left:** Logo mark — a minimal `MF` monogram in a circle with green glow, next to the app title: `HDFC Fund Assistant` in Inter Bold
+- **Center:** A subtle badge showing: `🟢 Live · Corpus updated: 31 May 2026` — a small pill-shaped status indicator with a pulsing green dot
+- **Right:** Two icon buttons — a `🔔 bell icon` (notification placeholder) and a `⚙️ gear icon` (settings placeholder), both in muted gray with hover glow
+
+---
+
+### ⚠️ 2. REGULATORY DISCLAIMER BANNER
+- A **thin, persistent banner** just below the nav bar
+- Background: `rgba(255, 107, 107, 0.08)` with a `1px solid rgba(255,107,107,0.25)` border
+- Icon: `⚠️` warning icon in `#FF6B6B`
+- Text: `"Facts-only assistant · No investment advice or recommendations · Data sourced exclusively from official Groww scheme pages"`
+- Font: Inter 12px, text color: `#FF6B6B`
+- Must NOT be dismissible — always sticky
+
+---
+
+### 📂 3. LEFT SIDEBAR — Fund Selector Panel
+Width: ~260px, background `#141720`, separated from main content by a `1px` divider
+
+**Section Header:** `"HDFC Funds"` in uppercase Inter 11px, letter-spacing 1.5px, muted gray
+
+**Fund Cards (5 total):** Each card is a clickable item with:
+- A small color-coded **fund type badge** (equity = purple, gold = amber)
+- Fund name in 13px white text: e.g., `HDFC Mid-Cap Opp. Fund`
+- Sub-label in muted gray 11px: `Direct · Growth`
+- Active state: left `3px` emerald green border + subtle green tint background
+
+**5 Funds to list:**
+1. `HDFC Mid-Cap Opportunities Fund` — badge: `Equity · Very High Risk`
+2. `HDFC Small Cap Fund` — badge: `Equity · Very High Risk`
+3. `HDFC Gold ETF Fund of Fund` — badge: `FoF · High Risk`
+4. `HDFC Multi-Cap Fund` — badge: `Equity · Very High Risk`
+5. `HDFC Large-Cap Fund` — badge: `Equity · High Risk`
+
+**Bottom of sidebar:** A small info block showing:
+- `"Powered by Hybrid RAG · BGE + BM25 + RRF"`
+- `"LLM: Groq Llama 3"`
+- Both in muted gray, 10px italic font
+
+---
+
+### 💬 4. MAIN CHAT AREA
+
+#### 4A. Welcome State (Empty Chat — First Load)
+When no conversation has started, show a **centered hero section** in the middle of the chat area:
+- Large centered logo glyph (the `MF` monogram, 64px)
+- Heading (H1): `"Ask anything about HDFC Mutual Funds"` — Inter Bold 28px, white
+- Sub-heading: `"Grounded in verified Groww data. Strictly facts. Zero advice."` — Inter 15px, muted gray
+- **3 Quick-Start Prompt Cards** arranged horizontally in a row:
+  - Card 1: `"💰 What is the exit load for HDFC Mid-Cap Opportunities Fund?"`
+  - Card 2: `"📊 Minimum SIP amount for HDFC Small Cap Fund?"`
+  - Card 3: `"📈 Which benchmark index does HDFC Large-Cap Fund follow?"`
+  - Each card: glassmorphism style, hover lifts with subtle shadow + green border glow, clickable
+
+#### 4B. Conversation Thread
+**User Message Bubbles:**
+- Aligned right
+- Background: `linear-gradient(135deg, #1a2040, #1e2a50)` — dark navy
+- White text, rounded `16px 16px 4px 16px`
+- Small user avatar: a white circle with initials
+
+**AI Response Bubbles:**
+- Aligned left
+- Background: glassmorphism card — `rgba(255,255,255,0.04)` with `1px solid #1E2330`
+- **Header row:** Violet AI icon (`⬡` hexagon shape) + label `"HDFC Fund Assistant"` in violet `#7B61FF`
+- Response text in white, Inter 14px, max 3 sentences (by design)
+- **Citation Chip** below the text:
+  - Pill-shaped button: `🔗 View Source on Groww` in amber/gold color
+  - Background: `rgba(255, 183, 77, 0.1)`, border: `1px solid rgba(255,183,77,0.3)`
+  - On hover: subtle glow + underline on text
+- **Footer metadata line:** `"Last updated from sources: 31 May 2026"` in muted gray 11px
+
+**Refusal Response Bubbles (Advisory Query Detected):**
+- Same AI bubble structure but with a `⛔ Advisory Query Blocked` red chip at the top of the bubble
+- Background tinted slightly red: `rgba(255,107,107,0.05)`
+- Refusal text in standard white
+- An amber educational link chip: `🎓 AMFI Investor Education`
+
+**AI Thinking / Loading State:**
+- A subtle animated typing indicator: three pulsing dots in violet color
+- Below the dots: a small pipeline progress strip showing: `Guardrails ✓ → Hybrid Search ⏳ → Reranking → LLM`
+- Each step lights up in emerald green as it completes
+
+---
+
+### ✍️ 5. CHAT INPUT BAR (Sticky Bottom)
+- Full-width input area pinned to the bottom of the chat panel
+- Background: `#141720`, top border `1px solid #1E2330`
+- **Textarea:** Borderless, dark background, white text, placeholder: `"Ask about HDFC fund facts — exit loads, SIP minimums, benchmarks..."`
+- **Send Button:** Circular `48px` button, background: `linear-gradient(135deg, #00C48C, #00A870)`, white arrow `→` icon
+  - On hover: scale to `1.05`, brighter glow shadow
+  - Disabled state when textarea is empty: muted gray
+- **Left of input:** A small `⚡ Hybrid Search Active` status pill in emerald green — always visible
+
+---
+
+### 📊 6. RESPONSE METADATA PANEL (Right side, optional collapsible drawer)
+A collapsible panel on the far right (triggered by a `📊` button), showing:
+- **Retrieved Chunks Viewer:** Shows the 3 context chunks used by the LLM
+  - Each chunk: small card with `scheme_name` header, `page_section` sub-label, and a 2-line text preview
+- **Retrieval Scores:** A mini bar chart showing Dense Score vs Sparse Score for each chunk
+- **Model Used:** `Groq · Llama-3.1-70B`
+- **Response Latency:** `~1.2s` with a small stopwatch icon
+
+---
+
+### ✨ Micro-interactions & Animations (Critical for WOW factor)
+1. **Page Load:** Fade-in + subtle upward translate for all panels (300ms staggered)
+2. **Fund Card Hover:** Left border accent slides in + background tint fades in (150ms)
+3. **Quick-Start Card Hover:** Card lifts 4px, green glow border appears (200ms)
+4. **Send Button:** Ripple animation on click
+5. **AI Response Reveal:** Text appears token-by-token with a blinking cursor
+6. **Citation Chip:** Pulses once on appearance
+7. **Loading Pipeline Strip:** Steps illuminate left-to-right with a smooth sweep animation
+
+---
+
+### 📱 Responsive Behavior
+- **Desktop (>1200px):** Full 3-column layout (sidebar + chat + optional panel)
+- **Tablet (768px–1200px):** Sidebar collapses to icon-only mode; right panel hidden
+- **Mobile (<768px):** Sidebar hidden (accessible via hamburger); full-width chat
+
+---
+
+### 🔒 Trust Signals to include throughout the UI
+- `"Verified Groww Data"` badge with a shield icon on every AI response
+- Corpus freshness indicator: `"🟢 Corpus: Updated Today"` in sidebar footer
+- A subtle `"SEBI/AMFI Compliant"` watermark text in footer
+

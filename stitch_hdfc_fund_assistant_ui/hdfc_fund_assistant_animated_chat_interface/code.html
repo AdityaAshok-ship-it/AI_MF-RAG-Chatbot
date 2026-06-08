@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>HDFC Fund Assistant</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-tertiary-fixed-variant": "#633f00",
+                        "tertiary-container": "#e39f37",
+                        "on-tertiary-container": "#5b3900",
+                        "on-secondary-fixed": "#1a0063",
+                        "secondary-container": "#4720ca",
+                        "on-secondary-container": "#baaeff",
+                        "tertiary": "#ffbb5a",
+                        "tertiary-fixed-dim": "#ffb954",
+                        "on-primary-fixed-variant": "#005138",
+                        "on-primary-container": "#004a33",
+                        "surface-container-high": "#232a36",
+                        "inverse-on-surface": "#29313c",
+                        "primary-fixed-dim": "#3fdfa5",
+                        "inverse-surface": "#dbe3f2",
+                        "surface": "#0c141e",
+                        "inverse-primary": "#006c4b",
+                        "surface-variant": "#2d3541",
+                        "background": "#0c141e",
+                        "on-secondary-fixed-variant": "#441cc8",
+                        "surface-container-lowest": "#070f19",
+                        "on-secondary": "#2e009c",
+                        "tertiary-fixed": "#ffddb4",
+                        "surface-container": "#18202b",
+                        "surface-container-highest": "#2d3541",
+                        "primary-fixed": "#63fcc0",
+                        "on-primary-fixed": "#002114",
+                        "outline-variant": "#3c4a42",
+                        "surface-dim": "#0c141e",
+                        "error": "#ffb4ab",
+                        "secondary-fixed": "#e5deff",
+                        "primary": "#41e0a6",
+                        "surface-bright": "#323a46",
+                        "on-surface-variant": "#bbcac0",
+                        "secondary-fixed-dim": "#c9bfff",
+                        "primary-container": "#00c48c",
+                        "on-surface": "#dbe3f2",
+                        "on-error-container": "#ffdad6",
+                        "on-primary": "#003825",
+                        "surface-tint": "#3fdfa5",
+                        "secondary": "#c9bfff",
+                        "surface-container-low": "#141c27",
+                        "on-tertiary-fixed": "#291800",
+                        "on-tertiary": "#452b00",
+                        "error-container": "#93000a",
+                        "outline": "#85948b",
+                        "on-background": "#dbe3f2",
+                        "on-error": "#690005"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "xs": "4px",
+                        "gutter": "16px",
+                        "lg": "24px",
+                        "unit": "4px",
+                        "md": "16px",
+                        "xl": "32px",
+                        "container-margin": "24px",
+                        "sm": "8px"
+                    },
+                    "fontFamily": {
+                        "headline-lg-mobile": ["Inter"],
+                        "headline-xl": ["Inter"],
+                        "label-md": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "headline-md": ["Inter"],
+                        "body-md": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "label-sm": ["Inter"]
+                    },
+                    "fontSize": {
+                        "headline-lg-mobile": ["24px", {"lineHeight": "32px", "fontWeight": "700"}],
+                        "headline-xl": ["40px", {"lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "label-md": ["14px", {"lineHeight": "20px", "fontWeight": "500"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "700"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "500"}]
+                    },
+                    "animation": {
+                        "pulse-slow": "pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite",
+                        "sweep": "sweep 2s linear infinite",
+                        "fade-in-up": "fadeInUp 0.6s ease-out forwards",
+                        "ripple": "ripple 0.6s linear"
+                    },
+                    "keyframes": {
+                        "sweep": {
+                            "0%": { "background-position": "200% center" },
+                            "100%": { "background-position": "-200% center" }
+                        },
+                        "fadeInUp": {
+                            "0%": { opacity: "0", transform: "translateY(20px)" },
+                            "100%": { opacity: "1", transform: "translateY(0)" }
+                        },
+                        "ripple": {
+                            "to": {
+                                transform: "scale(4)",
+                                opacity: "0"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body {
+            background-color: theme('colors.background');
+            color: theme('colors.on-background');
+            -webkit-font-smoothing: antialiased;
+        }
+        
+        .glass-panel {
+            background-color: rgba(20, 23, 32, 0.85);
+            backdrop-filter: blur(12px);
+            border: 1px solid theme('colors.surface-container-high');
+            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05);
+        }
+
+        .ai-glow {
+            box-shadow: 0 0 20px rgba(123, 97, 255, 0.1);
+        }
+        
+        /* Custom Scrollbar for dark mode */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: theme('colors.surface-variant');
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: theme('colors.outline');
+        }
+
+        /* Micro-interactions */
+        @media (prefers-reduced-motion: no-preference) {
+            .stagger-1 { animation-delay: 100ms; }
+            .stagger-2 { animation-delay: 200ms; }
+            .stagger-3 { animation-delay: 300ms; }
+            
+            .fund-card {
+                position: relative;
+                overflow: hidden;
+            }
+            .fund-card::before {
+                content: '';
+                position: absolute;
+                left: 0;
+                top: 0;
+                bottom: 0;
+                width: 4px;
+                background-color: theme('colors.primary');
+                transform: translateX(-100%);
+                transition: transform 0.2s ease-out;
+            }
+            .fund-card:hover::before {
+                transform: translateX(0);
+            }
+            .fund-card:hover {
+                background-color: theme('colors.surface-container-high');
+            }
+
+            .quick-start-card {
+                transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            }
+            .quick-start-card:hover {
+                transform: translateY(-4px);
+                border-color: theme('colors.primary');
+                box-shadow: 0 4px 20px rgba(65, 224, 166, 0.1);
+            }
+
+            .cursor-blink::after {
+                content: '|';
+                animation: blink 1s step-start infinite;
+                color: theme('colors.primary');
+            }
+            @keyframes blink {
+                50% { opacity: 0; }
+            }
+
+            .btn-ripple {
+                position: relative;
+                overflow: hidden;
+            }
+            .btn-ripple .ripple-element {
+                position: absolute;
+                border-radius: 50%;
+                transform: scale(0);
+                animation: ripple 0.6s linear;
+                background-color: rgba(255, 255, 255, 0.3);
+            }
+
+            .pipeline-step {
+                transition: color 0.3s ease;
+            }
+            .pipeline-step.active {
+                color: theme('colors.primary');
+                text-shadow: 0 0 8px rgba(65, 224, 166, 0.5);
+            }
+        }
+    </style>
+</head>
+<body class="flex flex-col h-screen overflow-hidden font-body-md text-body-md">
+<!-- TopNavBar (From JSON) -->
+<nav class="bg-surface-container dark:bg-surface-container-high font-headline-md text-headline-md font-bold text-on-surface dark:text-on-surface shadow-sm border-b border-outline-variant/30 flex justify-between items-center px-gutter py-sm w-full z-50 fixed top-0 h-16 opacity-0 animate-fade-in-up stagger-1">
+<div class="flex items-center gap-sm">
+<span class="text-primary dark:text-primary-fixed-dim">HDFC Mutual Fund AI</span>
+<div class="flex items-center gap-xs ml-4 bg-surface-container-low px-3 py-1 rounded-full border border-surface-variant">
+<div class="w-2 h-2 rounded-full bg-primary animate-pulse-slow"></div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Live · Corpus updated: 31 May 2026</span>
+</div>
+</div>
+<div class="flex items-center gap-md text-on-surface-variant">
+<span class="material-symbols-outlined cursor-pointer hover:bg-surface-variant transition-colors p-2 rounded-full active:scale-95" data-icon="help_outline">help_outline</span>
+<span class="material-symbols-outlined cursor-pointer hover:bg-surface-variant transition-colors p-2 rounded-full active:scale-95" data-icon="account_circle">account_circle</span>
+</div>
+</nav>
+<!-- Regulatory Disclaimer Banner -->
+<div class="fixed top-16 w-full z-40 bg-[rgba(255,107,107,0.08)] border-b border-error/30 py-2 px-gutter text-center flex items-center justify-center gap-sm backdrop-blur-sm opacity-0 animate-fade-in-up stagger-1">
+<span class="material-symbols-outlined text-error text-[16px]">info</span>
+<span class="font-label-sm text-label-sm text-error">Facts-only assistant · No investment advice or recommendations · Data sourced exclusively from official Groww scheme pages</span>
+</div>
+<!-- Main Layout Grid -->
+<div class="flex flex-1 pt-[104px] h-full"> <!-- 64px Nav + 40px Disclaimer -->
+<!-- SideNavBar (From JSON) -->
+<aside class="hidden lg:flex flex-col h-full w-[280px] bg-surface-container-low/80 backdrop-blur-xl border-r border-outline-variant/20 shadow-xl p-md gap-sm z-30 shrink-0 overflow-y-auto opacity-0 animate-fade-in-up stagger-2">
+<div class="mb-md">
+<h2 class="font-headline-sm text-headline-sm font-black text-on-surface">Fund Selector</h2>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Risk-adjusted analysis</p>
+</div>
+<!-- Tab 1 (Active equivalent) -->
+<div class="flex items-center gap-sm p-3 bg-secondary-container text-on-secondary-container rounded-lg font-bold cursor-pointer transition-all font-label-md text-label-md border-l-4 border-primary fund-card">
+<span class="material-symbols-outlined" data-icon="trending_up">trending_up</span>
+<div class="flex flex-col">
+<span>Mid-Cap Opportunities</span>
+<div class="flex gap-2 mt-1">
+<span class="text-[10px] bg-surface-container-highest px-1.5 py-0.5 rounded text-on-surface-variant">Equity</span>
+<span class="text-[10px] bg-error-container/30 px-1.5 py-0.5 rounded text-error">High Risk</span>
+</div>
+</div>
+</div>
+<!-- Tab 2 -->
+<div class="flex items-center gap-sm p-3 text-on-surface-variant transition-all cursor-pointer font-label-md text-label-md rounded-lg fund-card">
+<span class="material-symbols-outlined" data-icon="query_stats">query_stats</span>
+<div class="flex flex-col">
+<span>Small Cap Fund</span>
+<div class="flex gap-2 mt-1">
+<span class="text-[10px] bg-surface-container-highest px-1.5 py-0.5 rounded text-on-surface-variant">Equity</span>
+<span class="text-[10px] bg-error-container/30 px-1.5 py-0.5 rounded text-error">Very High Risk</span>
+</div>
+</div>
+</div>
+<!-- Tab 3 -->
+<div class="flex items-center gap-sm p-3 text-on-surface-variant transition-all cursor-pointer font-label-md text-label-md rounded-lg fund-card">
+<span class="material-symbols-outlined" data-icon="payments">payments</span>
+<div class="flex flex-col">
+<span>Gold ETF</span>
+<div class="flex gap-2 mt-1">
+<span class="text-[10px] bg-surface-container-highest px-1.5 py-0.5 rounded text-on-surface-variant">Commodity</span>
+<span class="text-[10px] bg-tertiary-container/30 px-1.5 py-0.5 rounded text-tertiary">Moderate Risk</span>
+</div>
+</div>
+</div>
+<!-- Tab 4 -->
+<div class="flex items-center gap-sm p-3 text-on-surface-variant transition-all cursor-pointer font-label-md text-label-md rounded-lg fund-card">
+<span class="material-symbols-outlined" data-icon="dashboard_customize">dashboard_customize</span>
+<div class="flex flex-col">
+<span>Multi-Cap Fund</span>
+<div class="flex gap-2 mt-1">
+<span class="text-[10px] bg-surface-container-highest px-1.5 py-0.5 rounded text-on-surface-variant">Equity</span>
+<span class="text-[10px] bg-error-container/30 px-1.5 py-0.5 rounded text-error">High Risk</span>
+</div>
+</div>
+</div>
+<!-- Tab 5 -->
+<div class="flex items-center gap-sm p-3 text-on-surface-variant transition-all cursor-pointer font-label-md text-label-md rounded-lg fund-card">
+<span class="material-symbols-outlined" data-icon="equalizer">equalizer</span>
+<div class="flex flex-col">
+<span>Top 100 Large-Cap</span>
+<div class="flex gap-2 mt-1">
+<span class="text-[10px] bg-surface-container-highest px-1.5 py-0.5 rounded text-on-surface-variant">Equity</span>
+<span class="text-[10px] bg-tertiary-container/30 px-1.5 py-0.5 rounded text-tertiary">Moderate Risk</span>
+</div>
+</div>
+</div>
+<div class="mt-auto pt-md">
+<button class="w-full bg-primary text-on-primary py-3 rounded-lg font-label-md text-label-md hover:bg-primary-fixed transition-colors flex items-center justify-center gap-2 btn-ripple" onclick="createRipple(event)">
+<span class="material-symbols-outlined text-[18px]">compare_arrows</span> Compare Funds
+                 </button>
+</div>
+</aside>
+<!-- Main Chat Area -->
+<main class="flex-1 flex flex-col relative h-full bg-background opacity-0 animate-fade-in-up stagger-3">
+<!-- Chat Scroll Area -->
+<div class="flex-1 overflow-y-auto px-gutter md:px-xl py-xl flex flex-col items-center">
+<div class="w-full max-w-[800px] flex flex-col gap-xl pb-[120px]">
+<!-- Conversation Thread -->
+<!-- User Message -->
+<div class="flex justify-end w-full">
+<div class="bg-gradient-to-br from-surface-variant to-surface-container-high border border-outline-variant/30 p-md rounded-2xl rounded-tr-none max-w-[85%] md:max-w-[70%]">
+<p class="font-body-md text-body-md text-on-surface">What is the current exit load and minimum SIP amount for the HDFC Mid-Cap Opportunities Fund?</p>
+</div>
+</div>
+<!-- AI Message -->
+<div class="flex justify-start w-full gap-md">
+<div class="w-8 h-8 rounded-full bg-secondary-container/20 border border-secondary/30 flex items-center justify-center shrink-0 mt-1">
+<span class="material-symbols-outlined text-secondary text-[18px]">hexagon</span>
+</div>
+<div class="glass-panel ai-glow border-l-2 border-l-secondary p-md rounded-2xl rounded-tl-none max-w-[85%] md:max-w-[70%] relative">
+<p class="font-body-md text-body-md text-on-surface mb-4 ai-response-text" data-text="For the HDFC Mid-Cap Opportunities Fund, an exit load of 1% is applicable if units are redeemed within 1 year of investment. There is no exit load if redeemed after 1 year. The minimum SIP (Systematic Investment Plan) amount required to start investing in this fund is ₹100.">
+                                For the HDFC Mid-Cap Opportunities Fund, an exit load of 1% is applicable if units are redeemed within 1 year of investment. There is no exit load if redeemed after 1 year. The minimum SIP (Systematic Investment Plan) amount required to start investing in this fund is ₹100.
+                            </p>
+<!-- Citation Chip -->
+<a class="inline-flex items-center gap-1 bg-tertiary-container/10 border border-tertiary/20 px-2 py-1 rounded text-tertiary hover:bg-tertiary-container/20 transition-colors" href="#">
+<span class="material-symbols-outlined text-[14px]">link</span>
+<span class="font-label-sm text-label-sm">View Source on Groww</span>
+</a>
+</div>
+</div>
+<!-- User Message -->
+<div class="flex justify-end w-full">
+<div class="bg-gradient-to-br from-surface-variant to-surface-container-high border border-outline-variant/30 p-md rounded-2xl rounded-tr-none max-w-[85%] md:max-w-[70%]">
+<p class="font-body-md text-body-md text-on-surface">How does its historical performance compare?</p>
+</div>
+</div>
+<!-- Thinking State -->
+<div class="flex justify-start w-full gap-md">
+<div class="w-8 h-8 rounded-full bg-secondary-container/20 border border-secondary/30 flex items-center justify-center shrink-0 mt-1">
+<span class="material-symbols-outlined text-secondary text-[18px] animate-pulse">hexagon</span>
+</div>
+<div class="flex flex-col gap-sm">
+<div class="flex items-center gap-1 h-6">
+<div class="w-1.5 h-1.5 rounded-full bg-on-surface-variant animate-bounce" style="animation-delay: 0ms;"></div>
+<div class="w-1.5 h-1.5 rounded-full bg-on-surface-variant animate-bounce" style="animation-delay: 150ms;"></div>
+<div class="w-1.5 h-1.5 rounded-full bg-on-surface-variant animate-bounce" style="animation-delay: 300ms;"></div>
+</div>
+<!-- Pipeline Strip -->
+<div class="flex items-center gap-2 font-label-sm text-label-sm text-on-surface-variant bg-surface-container-lowest border border-outline-variant/20 px-3 py-1.5 rounded-md relative overflow-hidden" id="pipeline-strip">
+<!-- Sweep overlay -->
+<div class="absolute inset-0 bg-gradient-to-r from-transparent via-primary/20 to-transparent w-[200%] animate-sweep pointer-events-none"></div>
+<span class="pipeline-step text-on-surface" data-step="1">Guardrails</span>
+<span class="material-symbols-outlined text-[12px]">arrow_forward</span>
+<span class="pipeline-step text-primary font-medium drop-shadow-[0_0_2px_rgba(65,224,166,0.5)]" data-step="2">Hybrid Search</span>
+<span class="material-symbols-outlined text-[12px]">arrow_forward</span>
+<span class="pipeline-step" data-step="3">Reranking</span>
+<span class="material-symbols-outlined text-[12px]">arrow_forward</span>
+<span class="pipeline-step" data-step="4">LLM</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Bottom Input Area -->
+<div class="absolute bottom-0 w-full bg-gradient-to-t from-background via-background to-transparent pt-xl pb-md px-gutter md:px-xl flex justify-center z-20">
+<div class="w-full max-w-[800px] relative">
+<!-- Search Active Indicator -->
+<div class="absolute -top-10 left-4 bg-primary-container/10 border border-primary/20 text-primary px-3 py-1 rounded-full font-label-sm text-label-sm flex items-center gap-1 backdrop-blur-md">
+<span class="text-[10px]">⚡</span> Hybrid Search Active
+                    </div>
+<!-- Input Box -->
+<div class="glass-panel rounded-2xl flex items-end p-2 border border-outline-variant focus-within:border-primary focus-within:ring-1 focus-within:ring-primary transition-all shadow-lg">
+<textarea class="w-full bg-transparent border-none text-on-surface font-body-md text-body-md resize-none focus:ring-0 px-md py-sm placeholder-on-surface-variant/50 max-h-[150px]" placeholder="Ask about fund performance, risk, or compare schemes..." rows="1"></textarea>
+<button class="w-12 h-12 rounded-full bg-primary text-on-primary flex items-center justify-center hover:bg-primary-fixed hover:scale-105 transition-all shrink-0 shadow-[0_0_15px_rgba(65,224,166,0.3)] btn-ripple" onclick="createRipple(event)">
+<span class="material-symbols-outlined font-bold text-[20px]">arrow_upward</span>
+</button>
+</div>
+<div class="text-center mt-2">
+<span class="font-label-sm text-label-sm text-on-surface-variant/50">AI responses can be inaccurate. Review sourced links before making decisions.</span>
+</div>
+</div>
+</div>
+</main>
+</div>
+<script>
+        // Auto-resize textarea
+        const tx = document.getElementsByTagName("textarea");
+        for (let i = 0; i < tx.length; i++) {
+            tx[i].setAttribute("style", "height:" + (tx[i].scrollHeight) + "px;overflow-y:hidden;");
+            tx[i].addEventListener("input", OnInput, false);
+        }
+        function OnInput() {
+            this.style.height = 0;
+            this.style.height = (this.scrollHeight) + "px";
+        }
+
+        // Ripple Effect
+        function createRipple(event) {
+            const button = event.currentTarget;
+            const circle = document.createElement("span");
+            const diameter = Math.max(button.clientWidth, button.clientHeight);
+            const radius = diameter / 2;
+
+            circle.style.width = circle.style.height = `${diameter}px`;
+            circle.style.left = `${event.clientX - button.getBoundingClientRect().left - radius}px`;
+            circle.style.top = `${event.clientY - button.getBoundingClientRect().top - radius}px`;
+            circle.classList.add("ripple-element");
+
+            const existingRipple = button.querySelector('.ripple-element');
+            if (existingRipple) {
+                existingRipple.remove();
+            }
+
+            button.appendChild(circle);
+        }
+
+        // Token Reveal Animation
+        function typeWriter(element, text, speed = 20) {
+            if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                element.textContent = text;
+                return;
+            }
+            element.textContent = '';
+            element.classList.add('cursor-blink');
+            let i = 0;
+            function type() {
+                if (i < text.length) {
+                    element.textContent += text.charAt(i);
+                    i++;
+                    setTimeout(type, speed);
+                } else {
+                    element.classList.remove('cursor-blink');
+                }
+            }
+            type();
+        }
+
+        // Pipeline Sequence Animation
+        function animatePipeline() {
+            if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+            const steps = document.querySelectorAll('.pipeline-step');
+            let currentStep = 0;
+            
+            function nextStep() {
+                steps.forEach(s => s.classList.remove('active', 'text-primary', 'drop-shadow-[0_0_2px_rgba(65,224,166,0.5)]'));
+                if(currentStep < steps.length) {
+                    steps[currentStep].classList.add('active');
+                    currentStep++;
+                    setTimeout(nextStep, 800);
+                } else {
+                    currentStep = 0; // Loop or hold at end depending on need.
+                    setTimeout(nextStep, 1000); // Loop for demo purposes
+                }
+            }
+            nextStep();
+        }
+
+        // Init animations on load
+        document.addEventListener('DOMContentLoaded', () => {
+            const aiTextElements = document.querySelectorAll('.ai-response-text');
+            aiTextElements.forEach(el => {
+                const text = el.getAttribute('data-text');
+                if (text) typeWriter(el, text);
+            });
+            
+            animatePipeline();
+        });
+    </script>
+</body></html>
