@@ -15,7 +15,7 @@ GOLDEN_TESTS = [
     ("HDFC Small Cap minimum SIP amount", "Small Cap", "sip"),
     ("HDFC Gold ETF benchmark index", "Gold", "benchmark"),
     ("HDFC Multi Cap expense ratio", "Multi Cap", "expense"),
-    ("HDFC Large Cap fund manager", "Large Cap", "fund manager"),
+    ("HDFC Large Cap fund manager", "Large Cap", "fund management"),
 ]
 
 
